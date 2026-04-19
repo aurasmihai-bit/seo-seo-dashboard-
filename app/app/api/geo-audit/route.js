@@ -112,10 +112,7 @@ Return ONLY the JSON object, nothing else.`,
     });
 
     const rawText = message.content[0].text.trim();
-    
-    // Strip possible markdown fences
     const jsonText = rawText.replace(/^```json\s*/i, "").replace(/^```\s*/i, "").replace(/\s*```$/i, "").trim();
-    
     const auditData = JSON.parse(jsonText);
 
     return Response.json(auditData);
